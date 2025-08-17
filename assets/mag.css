@@ -184,3 +184,112 @@ html[data-theme="dark"] .theme-menu-btn .moon{opacity:1}
 }
 .theme-menu.open{ display:block; animation:menu-pop .12s ease-out }
 @keyframes menu-pop{ from{opacity:0; transform:scale(.98)} to{opacity:1; transform:scale(1)} }
+/* Overlay پشت منو */
+.nav-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.45);
+  backdrop-filter:blur(2px);
+  opacity:0; visibility:hidden; transition:opacity .2s ease; z-index:65;
+}
+body.nav-open .nav-overlay{ opacity:1; visibility:visible }
+body.nav-open{ overflow:hidden } /* قفل اسکرول وقتی منو بازه */
+
+/* Drawer موبایل (فقط زیر 980px) */
+@media (max-width:980px){
+  .primary-nav{
+    position:fixed; top:0; inset-inline-end:0; bottom:0;
+    width:min(320px, 84vw);
+    background:color-mix(in oklab, var(--bg) 92%, transparent);
+    border-inline-start:1px solid var(--line);
+    display:flex; flex-direction:column; gap:8px;
+    padding:16px; z-index:70;
+    transform:translateX(110%); transition:transform 260ms ease;
+    -webkit-overflow-scrolling:touch; overflow:auto;
+  }
+  body.nav-open .primary-nav{ transform:none }
+  .primary-nav a{
+    padding:10px 12px; border-radius:10px; color:var(--text);
+    border:1px solid transparent;
+  }
+  .primary-nav a:hover, .primary-nav a:focus-visible{
+    background:color-mix(in oklab, var(--elev) 60%, transparent);
+    border-color:var(--line);
+  }
+
+  /* همبرگر با انیمیشن X */
+  .hamburger{
+    position:relative; width:40px; height:38px;
+    background:transparent; border:1px solid var(--line);
+    border-radius:10px; display:grid; place-items:center;
+  }
+  .hamburger span{
+    position:absolute; width:20px; height:2px; background:var(--text);
+    border-radius:2px; transition:transform .22s ease, opacity .22s ease;
+  }
+  .hamburger span:nth-child(1){ transform:translateY(-6px) }
+  .hamburger span:nth-child(2){ transform:translateY(0) }
+  .hamburger span:nth-child(3){ transform:translateY(6px) }
+  .hamburger.is-open span:nth-child(1){ transform:rotate(45deg) }
+  .hamburger.is-open span:nth-child(2){ opacity:0 }
+  .hamburger.is-open span:nth-child(3){ transform:rotate(-45deg) }
+}
+
+/* دسکتاپ: منو همیشه اینلاین؛ همبرگر/اوورلی مخفی و بدون قفل اسکرول */
+@media (min-width:981px){
+  .hamburger{ display:none !important; }
+  .primary-nav{
+    display:flex !important; position:static !important; inset:auto !important;
+    height:auto !important; width:auto !important; transform:none !important;
+    background:transparent !important; border:0 !important; padding:0 !important;
+  }
+  #nav-overlay{ display:none !important; }
+  body{ overflow:auto !important; }
+}
+
+/* فیکس‌های موبایل برای لی‌اوت مرتب‌تر */
+@media (max-width:600px){
+  .section{ padding:56px 0; }
+  .hero{ padding:28px 0 8px; }
+  .hero-grid, .content-grid{ grid-template-columns:1fr !important; }
+  .featured-main img, .featured-side img,
+  .hl-slide img, .post img{ aspect-ratio:16/9; object-fit:cover; }
+  .grid.cards-3{ grid-template-columns:1fr !important; }
+  .headlines .hl-track{ gap:12px; }
+  .hl-slide{ flex:0 0 88%; }
+}
+/* Hamburger icon (SVG) */
+.icon-btn{
+  width:44px; height:44px; border-radius:12px;
+  border:1px solid var(--line); background:var(--elev);
+  display:grid; place-items:center; cursor:pointer;
+  transition:transform .18s ease, background .2s ease, border-color .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.icon-btn:hover{ transform:translateY(-1px); }
+.icon-btn:focus-visible{ outline:3px solid color-mix(in oklab, var(--primary) 40%, transparent) }
+
+.menu-icon{ width:24px; height:24px; display:block }
+.menu-icon line{
+  stroke:var(--text); stroke-width:2.2; stroke-linecap:round;
+  transform-origin:12px 12px; transition:transform .22s ease, opacity .18s ease, stroke .2s ease;
+  shape-rendering:geometricPrecision;
+}
+/* حالت بسته */
+.hamburger .l1{ transform:translateY(-4px) }
+.hamburger .l2{ transform:scaleX(1) }
+.hamburger .l3{ transform:translateY(4px) }
+/* حالت باز (به X) */
+.hamburger.is-open .l1{ transform:rotate(45deg) }
+.hamburger.is-open .l2{ opacity:0; transform:scaleX(.5) }
+.hamburger.is-open .l3{ transform:rotate(-45deg) }
+.hamburger.is-open .menu-icon line{ stroke:var(--primary) }
+
+/* فقط موبایل: دسکتاپ مخفی بماند */
+@media (min-width:981px){
+  .hamburger{ display:none !important; }
+}
+
+/* کاهش حرکت: بدون انیمیشن */
+@media (prefers-reduced-motion:reduce){
+  .menu-icon line{ transition:none !important }
+  .icon-btn{ transition:none !important }
+}

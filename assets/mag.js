@@ -4,12 +4,37 @@ document.documentElement.classList.add('js');
 const htmlEl = document.documentElement;
 const metaTheme = document.querySelector('meta[name="theme-color"]');
 
-// Mobile menu
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('nav');
-hamburger?.addEventListener('click', ()=>{
-  const open = nav?.classList.toggle('show');
-  hamburger.setAttribute('aria-expanded', String(!!open));
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.getElementById('nav');
+  const hamburger = document.getElementById('hamburger');
+  const overlay = document.getElementById('nav-overlay');
+  const isMobile = () => window.innerWidth <= 980;
+
+  function openNav(){
+    if (!isMobile()) return;
+    document.body.classList.add('nav-open');
+    hamburger?.classList.add('is-open');
+    hamburger?.setAttribute('aria-expanded','true');
+    hamburger?.setAttribute('aria-label','بستن منو');
+    if (overlay) overlay.hidden = false;
+    const first = nav?.querySelector('a');
+    setTimeout(()=>first?.focus(), 80);
+  }
+  function closeNav(){
+    document.body.classList.remove('nav-open');
+    hamburger?.classList.remove('is-open');
+    hamburger?.setAttribute('aria-expanded','false');
+    hamburger?.setAttribute('aria-label','باز کردن منو');
+    if (overlay) overlay.hidden = true;
+  }
+  function toggleNav(){ document.body.classList.contains('nav-open') ? closeNav() : openNav(); }
+
+  // بایندها
+  hamburger?.addEventListener('click', (e)=>{ e.preventDefault(); toggleNav(); });
+  overlay?.addEventListener('click', closeNav);
+  document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape') closeNav(); });
+  nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+  window.addEventListener('resize', ()=>{ if (!isMobile()) closeNav(); });
 });
 
 // Appearance menu: theme + accent
