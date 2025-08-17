@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="light" data-accent="crimson">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f7fb" />
+  <title>مقاله | NovaMag Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/news.css" />
+</head>
+<body class="article-page">
+  <div id="read-progress"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="news.html" class="logo"><span class="mark"></span><span>NovaMag Pro</span></a>
+      <div class="header-actions">
+        <button id="share-btn" class="btn btn-secondary">اشتراک‌گذاری</button>
+        <div class="theme-wrap">
+          <button id="theme-button" class="theme-menu-btn" aria-haspopup="true" aria-expanded="false" aria-controls="theme-menu" title="ظاهر">
+            <svg class="icon sun" viewBox="0 0 24 24"><path fill="currentColor" d="M6.76 4.84 5.34 3.42 3.92 4.84 5.34 6.26 6.76 4.84zM1 13h3v-2H1v2zm10 10h2v-3h-2v3zM20 13h3v-2h-3v2zM17.24 4.84 18.66 6.26 20.08 4.84 18.66 3.42 17.24 4.84zM12 7a5 5 0 100 10 5 5 0 000-10zm7.76 11.16-1.42 1.42 1.42 1.42 1.42-1.42-1.42-1.42zM3.92 19.16l1.42 1.42 1.42-1.42-1.42-1.42-1.42 1.42z"/></svg>
+            <svg class="icon moon" viewBox="0 0 24 24"><path fill="currentColor" d="M21 12.79A9 9 0 0 1 11.21 3c-.3 0-.6.02-.89.05a.5.5 0 0 0-.24.9A7 7 0 1 0 20.06 12.9a.5.5 0 0 0 .9-.24c.04-.29.04-.59.04-.89Z"/></svg>
+          </button>
+          <div id="theme-menu" class="theme-menu" role="menu">
+            <div class="group"><div class="label">حالت</div>
+              <button class="item" role="menuitemradio" data-theme="system" aria-checked="true">سیستمی</button>
+              <button class="item" role="menuitemradio" data-theme="light">روشن</button>
+              <button class="item" role="menuitemradio" data-theme="dark">تیره</button>
+            </div>
+            <div class="group"><div class="label">رنگ برند</div>
+              <div class="accents">
+                <button class="swatch" data-accent="crimson"></button>
+                <button class="swatch" data-accent="cobalt"></button>
+                <button class="swatch" data-accent="emerald"></button>
+                <button class="swatch" data-accent="amber"></button>
+                <button class="swatch" data-accent="violet"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article hero -->
+  <section class="article-hero">
+    <div class="container">
+      <h1>شبکه‌های نسل بعد؛ سرعت، تاخیر و فرصت‌های تازه</h1>
+      <div class="meta-row">
+        <span class="badge cat-tech">فناوری</span>
+        <span id="reading-time">۳ دقیقه مطالعه</span>
+        <span class="muted">۱۴۰۴/۰۶/۲۰</span>
+      </div>
+      <img src="https://picsum.photos/seed/article-cover/1280/720" alt="کاور مقاله" width="1280" height="720" loading="eager" fetchpriority="high" decoding="async">
+    </div>
+  </section>
+
+  <!-- Content + TOC -->
+  <main class="section">
+    <div class="container article-grid">
+      <aside class="toc card">
+        <h3>فهرست مطالب</h3>
+        <nav id="toc"></nav>
+      </aside>
+
+      <article class="post-content card">
+        <div class="content">
+          <h2>معرفی</h2>
+          <p>در سال‌های اخیر، تحول در زیرساخت‌های ارتباطی باعث شده تا مفاهیمی مانند <strong>تاخیر پایین</strong> و <strong>پهنای‌باند بالا</strong> به واقعیت نزدیک‌تر شوند.</p>
+          <h2>مزایا و چالش‌ها</h2>
+          <p>اگرچه سرعت بیشتر مزیت بزرگی است، اما چالش‌هایی نظیر هزینه استقرار و امنیت داده نیز مطرح هستند.</p>
+          <h3>کاربردها</h3>
+          <ul>
+            <li>واقعیت افزوده و مجازی</li>
+            <li>پزشکی از راه دور</li>
+            <li>اینترنت اشیا در صنعت</li>
+          </ul>
+          <h2>جمع‌بندی</h2>
+          <p>با برنامه‌ریزی دقیق و سرمایه‌گذاری هدفمند، نسل بعدی شبکه‌ها می‌تواند موتور محرک نوآوری باشد.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container cols">
+      <div><div class="logo"><span class="mark"></span><span>NovaMag Pro</span></div><p class="muted">مجله دیجیتال با پوشش سریع و تحلیلی رویدادها.</p></div>
+      <div><b>دسته‌ها</b><ul class="list"><li><a href="#">فناوری</a></li><li><a href="#">اقتصاد</a></li></ul></div>
+      <div><b>اشتراک</b><ul class="list"><li><a href="#">RSS</a></li><li><a href="#">خبرنامه</a></li></ul></div>
+    </div>
+  </footer>
+
+  <script src="assets/news.js"></script>
+</body>
+</html>

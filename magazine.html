@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="light" data-accent="clay">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#faf7f2" />
+  <title>web mania | مجله خبری حرفه‌ای</title>
+
+  <!-- SEO -->
+  <meta name="description" content="مجله خبری حرفه‌ای با طراحی مینیمال و مرتب" />
+  <meta property="og:title" content="Asteria Press | مجله خبری" />
+  <meta property="og:description" content="پوشش سریع و تحلیلی رویدادها" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://picsum.photos/seed/og-asteria/1200/630" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- UI: Cairo | Headings: Amiri -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/mag.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <button class="hamburger" id="hamburger" aria-label="باز کردن منو" aria-expanded="false"><span></span><span></span><span></span></button>
+
+      <a href="magazine.html" class="logo" aria-label="Asteria Press">
+        <span class="mark"></span><span> web mania</span>
+      </a>
+
+      <nav class="primary-nav" id="nav" aria-label="ناوبری اصلی">
+        <a href="#tech">فناوری</a>
+        <a href="#business">اقتصاد</a>
+        <a href="#sport">ورزش</a>
+        <a href="#culture">فرهنگ</a>
+        <a href="#science">دانش</a>
+        <a href="#life">سبک زندگی</a>
+      </nav>
+
+      <div class="header-actions">
+        <form class="search" role="search" aria-label="جستجو" onsubmit="return false;">
+          <input class="search-input" type="search" placeholder="جستجوی خبر..." aria-label="جستجو">
+          <button class="search-btn" type="submit" aria-label="جستجو">🔍</button>
+        </form>
+
+        <!-- Appearance menu -->
+        <div class="theme-wrap">
+          <button id="theme-button" class="theme-menu-btn" aria-haspopup="true" aria-expanded="false" aria-controls="theme-menu" title="ظاهر">
+            <svg class="icon sun" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.76 4.84 5.34 3.42 3.92 4.84 5.34 6.26 6.76 4.84zM1 13h3v-2H1v2zm10 10h2v-3h-2v3zM20 13h3v-2h-3v2zM17.24 4.84 18.66 6.26 20.08 4.84 18.66 3.42 17.24 4.84zM12 7a5 5 0 100 10 5 5 0 000-10zm7.76 11.16-1.42 1.42 1.42 1.42 1.42-1.42-1.42-1.42zM3.92 19.16l1.42 1.42 1.42-1.42-1.42-1.42-1.42 1.42z"/></svg>
+            <svg class="icon moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 12.79A9 9 0 0 1 11.21 3c-.3 0-.6.02-.89.05a.5.5 0 0 0-.24.9A7 7 0 1 0 20.06 12.9a.5.5 0 0 0 .9-.24c.04-.29.04-.59.04-.89Z"/></svg>
+          </button>
+          <div id="theme-menu" class="theme-menu" role="menu" aria-labelledby="theme-button">
+            <div class="group">
+              <div class="label">حالت</div>
+              <button class="item" role="menuitemradio" data-theme="system" aria-checked="true">سیستمی</button>
+              <button class="item" role="menuitemradio" data-theme="light" aria-checked="false">روشن</button>
+              <button class="item" role="menuitemradio" data-theme="dark" aria-checked="false">تیره</button>
+            </div>
+            <div class="group">
+              <div class="label">رنگ برند</div>
+              <div class="accents">
+                <button class="swatch" data-accent="clay" title="Clay"></button>
+                <button class="swatch" data-accent="cobalt" title="Cobalt"></button>
+                <button class="swatch" data-accent="forest" title="Forest"></button>
+                <button class="swatch" data-accent="amber" title="Amber"></button>
+                <button class="swatch" data-accent="violet" title="Violet"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero (tidy) -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <article class="featured-main sheet" data-reveal>
+        <a class="sheet-link" href="#">
+          <img src="https://picsum.photos/seed/hero-asteria/1200/720" alt="گزارش ویژه" width="1200" height="720" loading="eager" fetchpriority="high" decoding="async">
+          <div class="meta stack">
+            <span class="badge cat-tech">فناوری</span>
+            <h1 class="title">نسل تازه پلتفرم‌های هوش‌مصنوعی؛ سرعت، دقت و مسئولیت‌پذیری</h1>
+            <p class="muted">تحلیل روندهای داغ و تاثیر آن بر بازار کار و کسب‌وکارها</p>
+          </div>
+        </a>
+      </article>
+      <article class="featured-side sheet" data-reveal>
+        <a class="sheet-link" href="#">
+          <img src="https://picsum.photos/seed/side-eco/800/500" alt="پرونده اقتصادی" width="800" height="500" loading="lazy">
+          <div class="meta stack">
+            <span class="badge cat-business">اقتصاد</span>
+            <h3 class="title">کاهش هزینه لجستیک؛ مزیت رقابتی جدید برای صادرات</h3>
+          </div>
+        </a>
+      </article>
+      <article class="featured-side sheet" data-reveal>
+        <a class="sheet-link" href="#">
+          <img src="https://picsum.photos/seed/side-sport/800/500" alt="پرونده ورزشی" width="800" height="500" loading="lazy">
+          <div class="meta stack">
+            <span class="badge cat-sport">ورزش</span>
+            <h3 class="title">نقشه تاکتیکی نو برای تورنمنت پیشِ‌رو</h3>
+          </div>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Headlines (below hero) -->
+  <section class="headlines" aria-label="تیترهای امروز">
+    <div class="container">
+      <div class="headlines-bar">
+        <h2>تیترهای امروز</h2>
+        <div class="controls">
+          <button class="hl-btn prev" id="hl-prev" aria-label="قبلی">‹</button>
+          <button class="hl-btn next" id="hl-next" aria-label="بعدی">›</button>
+        </div>
+      </div>
+      <div class="hl-track" id="hl-track">
+        <a class="hl-slide sheet" href="#" data-reveal>
+          <img src="https://picsum.photos/seed/hl-a/900/500" alt="تیتر ۱" width="900" height="500" loading="lazy">
+          <div class="info stack"><span class="badge cat-life">زندگی</span><b>۱۰ عادت کوچک برای تمرکز بیشتر</b></div>
+        </a>
+        <a class="hl-slide sheet" href="#" data-reveal>
+          <img src="https://picsum.photos/seed/hl-b/900/500" alt="تیتر ۲" width="900" height="500" loading="lazy">
+          <div class="info stack"><span class="badge cat-science">دانش</span><b>کشف سیاره‌ای با جو غیرمعمول</b></div>
+        </a>
+        <a class="hl-slide sheet" href="#" data-reveal>
+          <img src="https://picsum.photos/seed/hl-c/900/500" alt="تیتر ۳" width="900" height="500" loading="lazy">
+          <div class="info stack"><span class="badge cat-culture">فرهنگ</span><b>نمایشگاه بین‌المللی هنرهای نو</b></div>
+        </a>
+        <a class="hl-slide sheet" href="#" data-reveal>
+          <img src="https://picsum.photos/seed/hl-d/900/500" alt="تیتر ۴" width="900" height="500" loading="lazy">
+          <div class="info stack"><span class="badge cat-tech">فناوری</span><b>پردازنده‌های کم‌مصرف برای لپ‌تاپ‌های سبک</b></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest + Sidebar -->
+  <main class="section">
+    <div class="container content-grid">
+      <section class="latest">
+        <div class="section-title" data-reveal>
+          <h2>آخرین خبرها</h2>
+          <a class="more" href="#">همه خبرها</a>
+        </div>
+
+        <div class="grid cards-3" id="latest-grid">
+          <article class="post sheet" data-reveal>
+            <a class="sheet-link" href="#">
+              <img src="https://picsum.photos/seed/post-a/800/520" alt="خبر ۱" width="800" height="520" loading="lazy">
+              <div class="info stack">
+                <span class="badge cat-tech">فناوری</span>
+                <h3 class="title">نسخه جدید سیستم‌عامل با تمرکز بر حریم خصوصی</h3>
+                <p class="muted">آپدیت مهم برای ایمنی و کنترل بیشتر کاربر.</p>
+              </div>
+            </a>
+          </article>
+          <article class="post sheet" data-reveal>
+            <a class="sheet-link" href="#">
+              <img src="https://picsum.photos/seed/post-b/800/520" alt="خبر ۲" width="800" height="520" loading="lazy">
+              <div class="info stack">
+                <span class="badge cat-business">اقتصاد</span>
+                <h3 class="title">رشد سرمایه‌گذاری در فین‌تک</h3>
+                <p class="muted">سه‌ماهه اخیر با جذب سرمایه قابل‌توجه همراه شد.</p>
+              </div>
+            </a>
+          </article>
+          <article class="post sheet" data-reveal>
+            <a class="sheet-link" href="#">
+              <img src="https://picsum.photos/seed/post-c/800/520" alt="خبر ۳" width="800" height="520" loading="lazy">
+              <div class="info stack">
+                <span class="badge cat-life">سبک زندگی</span>
+                <h3 class="title">چطور عادت مطالعه روزانه بسازیم؟</h3>
+                <p class="muted">راهنمای عملی برای شروع و استمرار.</p>
+              </div>
+            </a>
+          </article>
+        </div>
+
+        <div class="actions"><button id="load-more" class="btn btn-secondary">خبرهای بیشتر</button></div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="hot sheet" data-reveal>
+          <h3>داغ‌ترین‌ها</h3>
+          <ul class="hot-list">
+            <li><a href="#"><img src="https://picsum.photos/seed/hot-a/120/90" alt="داغ ۱" width="120" height="90"><span>افزایش ظرفیت مراکز داده در منطقه</span></a></li>
+            <li><a href="#"><img src="https://picsum.photos/seed/hot-b/120/90" alt="داغ ۲" width="120" height="90"><span>رکورد دوی ۱۰۰ متر بانوان جابجا شد</span></a></li>
+            <li><a href="#"><img src="https://picsum.photos/seed/hot-c/120/90" alt="داغ ۳" width="120" height="90"><span>فروش بالای بازی جدید در هفته اول</span></a></li>
+          </ul>
+        </section>
+
+        <section class="newsletter sheet" data-reveal>
+          <h3>عضویت خبرنامه</h3>
+          <p class="muted">جدیدترین مطالب هر هفته در ایمیل شما.</p>
+          <form id="newsletter-form" class="form" novalidate>
+            <input type="email" class="input" placeholder="you@example.com" aria-label="ایمیل" required>
+            <button class="btn btn-primary" type="submit">عضویت</button>
+          </form>
+        </section>
+
+        <section class="tags sheet" data-reveal>
+          <h3>برچسب‌ها</h3>
+          <div class="tag-cloud">
+            <a href="#" class="tag">#هوش‌مصنوعی</a>
+            <a href="#" class="tag">#بورس</a>
+            <a href="#" class="tag">#فوتبال</a>
+            <a href="#" class="tag">#فیلم</a>
+            <a href="#" class="tag">#سلامت</a>
+            <a href="#" class="tag">#سفر</a>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container cols">
+      <div><div class="logo"><span class="mark"></span><span>Asteria Press</span></div><p class="muted">مجله دیجیتال با پوشش سریع و تحلیلی رویدادها.</p></div>
+      <div><b>دسته‌ها</b><ul class="list"><li><a href="#tech">فناوری</a></li><li><a href="#business">اقتصاد</a></li><li><a href="#sport">ورزش</a></li><li><a href="#culture">فرهنگ</a></li></ul></div>
+      <div><b>ارتباط</b><ul class="list"><li><a href="mailto:hello@asteria.example">hello@asteria.example</a></li><li><a href="#">ارسال خبر</a></li></ul></div>
+    </div>
+  </footer>
+
+  <script src="assets/mag.js"></script>
+</body>
+</html>
