@@ -382,3 +382,26 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 /* تصاویر همیشه داخل والد بمانند */
 img, svg, video { max-width:100%; height:auto; }
+  :root{
+    --font-ui: "Vazirmatn", "Noto Sans Arabic", Tahoma, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --font-head: "Vazirmatn", "Noto Sans Arabic", Tahoma, sans-serif;
+  }
+
+  html, body{
+    font-family: var(--font-ui);
+    font-weight: 400;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6, .title{
+    font-family: var(--font-head);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.01em; /* نرمی تیترها */
+  }
+
+  .muted{ line-height: 1.9; }
+  .badge, .nav a, .btn{ font-weight: 600; }
