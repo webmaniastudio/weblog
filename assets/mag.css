@@ -293,3 +293,92 @@ body.nav-open{ overflow:hidden } /* قفل اسکرول وقتی منو بازه
   .menu-icon line{ transition:none !important }
   .icon-btn{ transition:none !important }
 }
+/* جلوگیری از اسکرول افقی کل صفحه */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* عناصر محتمل به بیرون‌زدن را کلیپ کن (نه پنهان‌سازی محتوا) */
+.hero, .headlines, .content-grid, .hero-grid { overflow-x: clip; }
+
+/* تصاویر و ویدیوها هرگز از عرض والد بزرگ‌تر نشوند */
+img, svg, video { max-width: 100%; height: auto; }
+
+/* Headlines slider: ریسپانسیو امن برای موبایل */
+.headlines .hl-track{
+  overflow-x: auto; overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding-inline: 8px;
+}
+.headlines .hl-slide{ flex: 0 0 88%; scroll-snap-align: start }
+@media (min-width: 900px){ .headlines .hl-slide{ flex: 0 0 33% } }
+
+/* Theme menu: پاپ‌آور فیکس و امن داخل ویوپورت */
+.theme-menu{
+  position: fixed; /* مهم: نه absolute */
+  left: 0; top: 0; /* با JS تنظیم می‌شود */
+  display: none;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow-2);
+  padding: 8px;
+  min-width: 220px;
+  width: max-content;
+  max-width: min(calc(100vw - 16px), 320px);
+  max-height: min(60vh, 420px);
+  overflow: auto;
+  z-index: 1000;
+}
+.theme-menu.open{ display: block; animation: menu-pop .12s ease-out }
+@keyframes menu-pop{ from{ opacity:0; transform:scale(.98)} to{ opacity:1; transform:scale(1)} }
+
+/* موبایل: spacing و تایپو بهتر */
+@media (max-width: 600px){
+  .section{ padding: 56px 0 }
+  .grid.cards-3{ grid-template-columns: 1fr !important }
+  .featured-main img, .featured-side img, .hl-slide img, .post img{
+    aspect-ratio: 16/9; object-fit: cover;
+  }
+}
+/* جلوگیری از اسکرول افقی کلی صفحه */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* نوار سرچ داخل بادی */
+.top-search{
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding: 8px 0;
+}
+
+/* خود کامپوننت سرچ (سازگار با نسخه قبلی) */
+.search{
+  display:flex; align-items:center; gap:8px;
+  background: var(--elev);
+  border:1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px;
+}
+.search-input{
+  flex:1; min-width: 0;
+  border:none; outline:none; background:transparent;
+  padding: 8px 10px; color: var(--text);
+}
+.search-btn{
+  border:none; cursor:pointer;
+  padding: 8px 10px; border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color:#fff;
+}
+
+/* موبایل: فاصله‌ها کمی کمتر و عرض کامل */
+@media (max-width: 600px){
+  .top-search{ padding: 6px 0; }
+  .search{ gap:6px }
+  .search-btn{ padding: 8px 12px }
+}
+
+/* پیشگیری از بیرون‌زدن افقی برخی بخش‌ها */
+.hero, .hero-grid, .headlines, .content-grid { overflow-x: clip; }
+
+/* تصاویر همیشه داخل والد بمانند */
+img, svg, video { max-width:100%; height:auto; }
